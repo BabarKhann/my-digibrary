@@ -1,0 +1,17 @@
+<h2>Search Authors</h2>
+<form action="/authors" method="GET">
+	<label>Name</lable>
+	<input type="text" name="name" value="<%= searchOptions.name %>" />
+	<button type="submit">Search</button>
+</form>
+<br/>
+<br/>
+<% if (authors) { %>
+    <% authors.forEach(function (author) { %>
+      <div>
+				<%= author.name %>
+			</div>
+    <% }) %>
+<% } else { %>
+No Author Found
+<% } %>
